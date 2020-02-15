@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="project.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<div>
+    <div class="jumbotron text-center">
+        <h1>Purchase Oder Form</h1>
+    </div>
+    <div class="container" center_div>
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <select class="form-control" id="food_item" onchange="finalCost()">
+                        <option value="0"> Select Food Item ... </option>
+                        <option value="1"> Spring Roll </option>
+                        <option value="2"> Fried Prawn </option>
+                        <option value="3"> Thai Fried Chicken Wings </option>
+                        <option value="4"> Cutlet Chicken </option>
+                        <option value="5"> Cutlet Beef </option>
+                        <option value="6"> Thai Mixed Noodles </option>
+                        <option value="7"> Thai Beef With Ginger </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="special_item" onchange="finalCost()">
+                        <option value="0"> Want Special Item ?</option>
+                        <option value="2"> Yes </option>
+                        <option value="0"> No </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="food_quantity" placeholder="Quantity"
+                        onkeyup="finalCost()">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="delivery_type" onchange="finalCost()">
+                        <option value="0"> Delivery Type - </option>
+                        <option value="0"> Normal </option>
+                        <option value="2"> Emergency </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="delivery_area" onchange="finalCost()">
+                        <option value="0"> Select Delivery Area ... </option>
+                        <option value="1"> Dhanmondi </option>
+                        <option value="2"> Gulshan </option>
+                        <option value="3"> Mohammadpur </option>
+                        <option value="4"> Uttara </option>
+                        <option value="5"> Mirpur </option>
+                        <option value="6"> Banani </option>
+                        <option value="7"> Magbazar </option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label>Total Cost ($) : </label>
+                    <span id="result"
+                        style="background-color: #8c7269;color: #fff;padding: 6px 70px;font-weight: 600;font-size: 18px; margin-left: 10px;border-radius: 5px;">0</span>
+                    <input type="button" value="SUBMIT" class="btn btn-primary" style="float: right" id="ok"
+                        onclick="ok_result()">
+                </div>
+            </form>
+        </div>
+
+        <div class="result_box animated zoomIn" style="display: none;" id="okResult">
+            <h3 class="result_box_text" id="ok_text"> Your order is successfully submitted. Please keep patience, we
+                will come to you soon.<br><br><span> -- Thank You -- </span></h3><br>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
